@@ -6,6 +6,7 @@ AWS Key Management Service (KMS) makes it easy for you to create and manage keys
 
 This workshop pretends to provide a better understanding on AWS Key Management Service (KMS) through a set of practical exercises.
 The workshop is aligned with the AWS KMS best practices "must-read" Whitepaper "**[AWS Key Management Service Best Practices](https://d0.awsstatic.com/whitepapers/aws-kms-best-practices.pdf)**" and the practices follow its guidelines.
+The entire workshop can be covered in two hours, depending on your previous experience with AWS.
 
 ---
 
@@ -15,7 +16,7 @@ The workshop contains four different sections (**NOTE:** designed to be followed
 * [Section I - Operating with AWS KMS and the CMKs](https://github.com/DanGOTO100/Draft-AWS-KMS-Workshop/blob/master/Section-1-Operating-with-AWS-KMS.md)
 * [Section II - Encryption with AWS KMS](https://github.com/DanGOTO100/Draft-AWS-KMS-Workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md)
 * [Section III - Key Policies and best practices - Working with a Web App](https://github.com/DanGOTO100/Draft-AWS-KMS-Workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md)
-* [Section IV - Monitoring AWS KMS]()
+* [Section IV - Monitoring AWS KMS](https://github.com/DanGOTO100/Draft-AWS-KMS-Workshop/blob/master/Section-4-Monitoring-AWS-KMS.md)
 
 The workshop is mostly practical and will operate in AWS KMS using the AWS CLI (through an EC2 instance), AWS console and AWS KMS API calls, to get a better understanding of the different options. 
 
