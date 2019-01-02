@@ -19,7 +19,7 @@ This is the first section of the AWS KMS Workshop, please ensure you have read a
 3. Then, in the "**Specify Template**" area, select "**Upload Template**" and browse for the template we downloaded just        before. Click "**Next**" and give the stack a name, like "KMSWorkshop-Stack". Hit "**Next**". Leave the default values that appear in this new page and hit "**Next**" again. In this new page, make sure you click the checkbox "**The following  
    resource(s) require capabilities: [AWS::IAM::Role]**" at the botton, and click "**Create Stack**". 
    
-   The stack is now being created. If      you got lost in the process, please look into the [CloudFormation Stack Creation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html)
+   The stack is now being created. If you got lost in the process, please look into the [CloudFormation Stack Creation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html)
    
    
    
@@ -29,13 +29,13 @@ This is the first section of the AWS KMS Workshop, please ensure you have read a
   Internet Gateway and update the subnet Route table.
   If you need help with these steps, make sure you check [this section of the AWS Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html).
 
-   If you need ovreall help with CloudFormation stacks, see [the CloudFormation documenation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
+   If you need overall help with CloudFormation stacks, see [the CloudFormation documenation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html).
 
 
-5. Make sure the security groups associated with the instace allow it to be accesible via SSH from your IP. **NOTE:**  you should restrict the initially created security group rule to be accesible only to your IP or the range of IPs from your LAN. Check the follwing [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SG_Changing_Group_Membership) if you need guidance.
+5. Make sure the security groups associated with the instance allow it to be accessible via SSH from your IP. **NOTE:**  you should restrict the initially created security group rule to be accesible only to your IP or the range of IPs from your LAN. Check the following [documentation](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SG_Changing_Group_Membership) if you need guidance.
 
 
-6. Once the EC2 instance is up and running. Assign the "**KMSWorkshop-InstanceInitRole**" to the instance you have launched. We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
+6. Once the EC2 instance is up and running, assign the "**KMSWorkshop-InstanceInitRole**" to the instance you have launched. We do it to ensure that the AWS CLI on the instance has enough permissions to run AWS KMS operations.
 If you need help with the operation, navigate to the EC2 service in the AWS console and take a look into picture below to locate the role attachment option. Optionally, use the following [AWS Security Blog article](https://aws.amazon.com/blogs/security/easily-replace-or-attach-an-iam-role-to-an-existing-ec2-instance-by-using-the-ec2-console/).
 
 
@@ -177,7 +177,7 @@ Select the policy and click the "Attach policy" button at botton right of the pa
 
 ### Step 3 - Create the key  - again - and set an alias
 
-Run the aws kms create-key command again and this time you will get the result from the creation og the key as a JSON block with the metadata of the key. See example below:
+Run the aws kms create-key command again and this time you will get the result from the creation of the key as a JSON block with the metadata of the key. See example below:
 
 ```
 $ aws kms create-key
@@ -198,7 +198,7 @@ $ aws kms create-key
 }
 
 ```
-There are important fields in the metadata response. First, The **KeyId** is very relevant as it is the unique identifier of the CMK within KMS. It is in the form of five blocks of digits. Take good note of the KeyId as you will be using it during the workshop.Also along the Workshop,I will reference its value as "**your-key-id**", please change it for your corresponding KeyId value when applicable. The ARN of the key and its status ("Enabled", "Disabled") are highly relevant too. Other information is displayed like the Account Id the key belongs and the target key usage, encrypt and decrypt in this case. 
+There are important fields in the metadata response. First, The **KeyId** is very relevant as it is the unique identifier of the CMK within KMS. It is in the form of five blocks of digits. Take good note of the KeyId as you will be using it during the workshop. Also along the Workshop,I will reference its value as "**your-key-id**", please change it for your corresponding KeyId value when applicable. The ARN of the key and its status ("Enabled", "Disabled") are highly relevant too. Other information is displayed like the Account Id the key belongs and the target key usage, encrypt and decrypt in this case. 
 
 If you go back to the AWS console and navigate to the IAM service. Click in the left area to the bottom, "Encryption Keys", the key you have just created is already listed there. **Important: Remember to select the right Region in the KMS screen**. However, as we used the create-key command without parameters, it does not contain any alias to display and looks like its alias is empty. See image below the region selection and the blank alias name.
 
@@ -541,6 +541,9 @@ If for any reason you delete the key we generated with our own key material "**I
 $ delete-imported-key-material --key-id  your-key-id.   
 ```
 
-Congratulations, you have now completed this section of the workshop.
+# Next step
+
+Congratulations, you have now completed this section of the workshop. 
+You can move to the [next section](https://github.com/DanGOTO100/Draft-AWS-KMS-Workshop/blob/master/Section-2-Encryption-with-AWS-KMS.md)
 
 
